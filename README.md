@@ -8,5 +8,18 @@ Both of these tools are great, however I needed a mix of both of these tools to 
 
 Thus Fantasy CityGen was created because I personally felt that both of these tools can combined for the perfect tool any world builder can use.
 
+
+## Roadmap Features
+
+Here are a few features I would like to be included in this project
+
+| Features |Complete?  |
+|--|--|
+| Generate a person with stats, background story, etc | ❌ |
+| Generate a map of a city with districts, no buildings yet | ❌ |
+| Generate maps with oceans and rivers | ❌ |
+| Generate cities with distinct building shapes| ❌ |
+| Associate people with buildings | ❌ |
+
 ## License
 Fantasy CityGen is licensed under the GNU GPLv3 license, see the LICENSE.txt for more information.
