@@ -11,6 +11,7 @@ FetchContent_Declare(SFML
   GIT_TAG 2.6.x)
 FetchContent_MakeAvailable(SFML)
 
+
 add_subdirectory(src)
 
 if(WIN32)
