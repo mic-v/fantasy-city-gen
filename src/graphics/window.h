@@ -11,7 +11,13 @@ namespace fcg {
         Window();
         Window(std::string, std::string);
         ~Window();
+
+        int initialize_window();
+        void poll_events();
+        bool is_open();
+        void display();
+        void clear();
     private:
-        sf::Window window;
+        sf::RenderWindow* rfWindow_;
     };
 }

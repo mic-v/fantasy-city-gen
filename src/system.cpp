@@ -1,17 +1,29 @@
 #include "system.h"
 #include <iostream>
 
-int fcg::start_system () {
-    std::cout << "Starting system\n";
-    return 0;
+
+fcg::System::System(fcg::Window& window) 
+    : window_(window) {
+
 }
 
-int fcg::run_system() {
-    std::cout << "Running system\n";
-    return 0;
+void fcg::System::start_system() {
+    std::cout << "Starting system\n"; 
+    window_.initialize_window();
+       
 }
 
-int fcg::close_system() {
-    std::cout << "Ending system\n";
-    return 0;
+void fcg::System::run_system() {
+    std::cout << this->window_.is_open() << std::endl;
+    while(this->window_.is_open()) {
+        this->window_.poll_events();
+
+        this->window_.clear();
+        this->window_.display();
+    }
 }
+
+void fcg::System::close_system() {
+    std::cout << "Ending system\n";    
+}
+

@@ -1,9 +1,15 @@
 #include "system.h"
+#include "graphics/window.h"
 
 int main() {
-    fcg::start_system();
-    fcg::run_system();
-    fcg::close_system();
+    fcg::Window window;
+    fcg::System system(window);
+
+    system.start_system();
+    system.run_system();
+    system.close_system();
+
+
     /*
     auto window = sf::RenderWindow{{1920u, 1080u}, "CMake SFML Project"};
     window.setFramerateLimit(144);
@@ -19,5 +25,5 @@ int main() {
     }
     */
 
-    return 0;
+    return EXIT_SUCCESS;
 }

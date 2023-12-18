@@ -1,9 +1,19 @@
-#pragma once;
+#pragma once
+
+#include "graphics/window.h"
 
 namespace fcg {
-    int start_system();
-    int run_system();
-    int close_system();
 
+class System {
+public:
+    System(fcg::Window& window);
+
+    void start_system();
+    void run_system();
+    void close_system();
+private:
+    fcg::Window & window_;
+
+};
 
 }
