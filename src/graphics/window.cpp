@@ -23,6 +23,15 @@ void fcg::Window::poll_events() {
         if(event.type == sf::Event::Closed) {
             this->rfWindow_->close();
         }
+        if(event.type == sf::Event::MouseButtonPressed) {
+            if(event.mouseButton.button == sf::Mouse::Right) {
+                std::cout << "Right click pressed" << std::endl;
+             }
+        }
+        if(event.type == sf::Event::MouseMoved) {
+            std::cout << "new mouse x: " << event.mouseMove.x << std::endl;
+            std::cout << "new mouse y: " << event.mouseMove.y << std::endl;            
+        }
     }
 }
 
