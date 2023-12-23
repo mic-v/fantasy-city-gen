@@ -2,6 +2,8 @@
 
 #include <string>
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
 
 namespace fcg {
 
@@ -17,6 +19,8 @@ namespace fcg {
         bool is_open();
         void display();
         void clear();
+
+        void draw(const sf::Drawable& drawable, const sf::RenderStates& states=sf::RenderStates::Default);
     private:
         sf::RenderWindow* rfWindow_;
     };

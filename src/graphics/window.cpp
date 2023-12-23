@@ -29,8 +29,6 @@ void fcg::Window::poll_events() {
              }
         }
         if(event.type == sf::Event::MouseMoved) {
-            std::cout << "new mouse x: " << event.mouseMove.x << std::endl;
-            std::cout << "new mouse y: " << event.mouseMove.y << std::endl;            
         }
     }
 }
@@ -46,3 +44,7 @@ void fcg::Window::display() {
 bool fcg::Window::is_open() {
     return this->rfWindow_->isOpen();
 }   
+
+void fcg::Window::draw(const sf::Drawable& drawable, const sf::RenderStates& states) {
+    this->rfWindow_->draw(drawable, states);
+}
