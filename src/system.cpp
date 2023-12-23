@@ -3,6 +3,7 @@
 #include <vector>
 #include <SFML/System/Vector2.hpp>
 #include <cstdlib>
+#include <ctime>
 
 
 fcg::System::System(fcg::Window& window) 
@@ -22,14 +23,17 @@ void fcg::System::run_system() {
     std::vector<sf::Vector2f> points = {};
     std::vector<sf::CircleShape> circles = {};
 
+
+    srand(time(0));
+
     for(auto x = 0; x < GRIDSIZE; x++) {
         for(auto y = 0; y < GRIDSIZE; y++) {
             points.push_back(sf::Vector2f(x + JITTER * (rand() - rand()),
                         y + JITTER * (rand() - rand())));
             
-            sf::CircleShape circle(5.0f);
+            sf::CircleShape circle(3.0f);
             circle.setFillColor(sf::Color(255,0,50));
-            circle.setPosition((x + JITTER * (rand() - rand()) / RAND_MAX) * (800 / GRIDSIZE), (y + JITTER * (rand() - rand()) / RAND_MAX) * (800 / GRIDSIZE));
+            circle.setPosition((x + JITTER * (rand()) / RAND_MAX) * (800 / GRIDSIZE), (y + JITTER * (rand()) / RAND_MAX) * (600 / GRIDSIZE));
             circles.push_back(circle);
 
         }
