@@ -17,7 +17,7 @@ int fcg::Window::initialize_window() {
     return 0;
 }
 
-void fcg::Window::poll_events() {
+void fcg::Window::poll_events() const {
     sf::Event event;
     while(this->rfWindow_->pollEvent(event)) {
         if(event.type == sf::Event::Closed) {
@@ -33,18 +33,18 @@ void fcg::Window::poll_events() {
     }
 }
 
-void fcg::Window::clear() {
+void fcg::Window::clear() const {
     this->rfWindow_->clear(sf::Color(220,192,110));
 }
 
-void fcg::Window::display() {
+void fcg::Window::display() const {
     this->rfWindow_->display();
 }
 
-bool fcg::Window::is_open() {
+bool fcg::Window::is_open() const {
     return this->rfWindow_->isOpen();
 }   
 
-void fcg::Window::draw(const sf::Drawable& drawable, const sf::RenderStates& states) {
+void fcg::Window::draw(const sf::Drawable& drawable, const sf::RenderStates& states) const {
     this->rfWindow_->draw(drawable, states);
 }

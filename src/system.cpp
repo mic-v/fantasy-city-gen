@@ -4,7 +4,8 @@
 #include <SFML/System/Vector2.hpp>
 #include <cstdlib>
 #include <ctime>
-
+#include "core/map.h"
+#include "core/triangle.h"
 
 fcg::System::System(fcg::Window& window) 
     : window_(window) {
@@ -18,11 +19,9 @@ void fcg::System::start_system() {
 }
 
 void fcg::System::run_system() {
-    const int GRIDSIZE = 25;
-    const float JITTER = 0.5f;
-    std::vector<sf::Vector2f> points = {};
-    std::vector<sf::CircleShape> circles = {};
-
+    fcg::Map map;
+    fcg::Triangle triangle(sf::Vector2f(0.0f,0.0f), sf::Vector2f(40.0f, 100.0f), sf::Vector2f(0.0, 150.0f));
+    /*
 
     srand(time(0));
 
@@ -38,24 +37,16 @@ void fcg::System::run_system() {
 
         }
     }
-
-
-    std::cout << "length of circles" << circles.size() << std::endl;
-    for(auto & x: circles) {
-        std::cout << x.getPosition().x << " " << x.getPosition().y << std::endl;
-    }
-    
-
-
-    std::cout << this->window_.is_open() << std::endl;
+    */
     while(this->window_.is_open()) {
         this->window_.poll_events();
 
         this->window_.clear();
 
-        for(auto& x: circles) {
-            this->window_.draw(x);
+        for(auto& x: map.get_points()) {
+            this->window_.draw(x.get_point());
         }
+        this->window_.draw(triangle.shape);
 
         this->window_.display();
     }

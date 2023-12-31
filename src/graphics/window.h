@@ -15,12 +15,12 @@ namespace fcg {
         ~Window();
 
         int initialize_window();
-        void poll_events();
-        bool is_open();
-        void display();
-        void clear();
+        void poll_events() const;
+        bool is_open() const;
+        void display() const;
+        void clear() const;
 
-        void draw(const sf::Drawable& drawable, const sf::RenderStates& states=sf::RenderStates::Default);
+        void draw(const sf::Drawable& drawable, const sf::RenderStates& states=sf::RenderStates::Default) const;
     private:
         sf::RenderWindow* rfWindow_;
     };
