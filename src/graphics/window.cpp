@@ -12,7 +12,7 @@ fcg::Window::~Window() {
 
 int fcg::Window::initialize_window() {
     this->rfWindow_ = new sf::RenderWindow();
-    this->rfWindow_->create(sf::VideoMode(800,600), "Fantasy City Gen");
+    this->rfWindow_->create(sf::VideoMode(1600,900), "Fantasy City Gen");
     this->rfWindow_->setFramerateLimit(60);
     return 0;
 }

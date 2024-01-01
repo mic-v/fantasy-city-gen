@@ -34,3 +34,19 @@ sf::CircleShape fcg::Point::get_point() const {
     return this->point_;
 }
 
+void fcg::Point::set_pos(sf::Vector2f pos) {
+    this->pos_ = pos;
+}
+
+
+sf::Vector2f fcg::Point::get_pos() const {
+    return this->pos_;
+}
+
+bool fcg::operator== (const Point& a, const Point& b) {
+    return a.get_pos().x == b.get_pos().x && a.get_pos().y == b.get_pos().y;
+}
+
+bool fcg::operator!=(const Point& a, const Point& b) {
+    return a.get_pos().x != b.get_pos().x || a.get_pos().y != b.get_pos().y;
+}

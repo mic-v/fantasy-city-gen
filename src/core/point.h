@@ -13,6 +13,12 @@ class Point {
 
         void set_point(sf::CircleShape);
         sf::CircleShape get_point() const;
+
+        void set_pos(sf::Vector2f);
+        sf::Vector2f get_pos() const;
+
+        friend bool operator==(const Point&, const Point&);
+        friend bool operator!=(const Point&, const Point&);
     private:
         sf::Vector2f pos_;
         sf::CircleShape point_;
