@@ -9,18 +9,29 @@ include(FetchContent)
 FetchContent_Declare(SFML
   GIT_REPOSITORY https://github.com/SFML/SFML.git
   GIT_TAG 2.6.x)
-FetchContent_MakeAvailable(SFML)
 
+FetchContent_Declare(
+  doctest 
+  URL 
+  https://raw.githubusercontent.com/doctest/doctest/master/doctest/doctest.h
+  DOWNLOAD_NO_EXTRACT TRUE  
+)
+
+FetchContent_MakeAvailable(SFML)
+FetchContent_MakeAvailable(doctest)
 
 add_subdirectory(src)
 
 if(WIN32)
-  add_custom_command(
-    TARGET fantasy-city-gen
-    COMMENT "Copy OpenAL DLL"
-    PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy ${SFML_SOURCE_DIR}/extlibs/bin/$<IF:$<EQUAL:${CMAKE_SIZEOF_VOID_P},8>,x64,x86>/openal32.dll $<TARGET_FILE_DIR:CMakeSFMLProject>
-    VERBATIM)
+add_custom_command(
+  TARGET fantasy-city-gen
+  COMMENT "Copy OpenAL DLL"
+  PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy ${SFML_SOURCE_DIR}/extlibs/bin/$<IF:$<EQUAL:${CMAKE_SIZEOF_VOID_P},8>,x64,x86>/openal32.dll $<TARGET_FILE_DIR:CMakeSFMLProject>
+  VERBATIM)
 endif()
-
+  
 install(TARGETS fantasy-city-gen)
+
+enable_testing()
+add_subdirectory(test)
 
