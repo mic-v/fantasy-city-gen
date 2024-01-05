@@ -1,6 +1,6 @@
 #pragma once
 
-#include "graphics/window.h"
+#include "core/include/window.h"
 
 namespace fcg {
 

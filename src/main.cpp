@@ -1,5 +1,5 @@
 #include "system.h"
-#include "graphics/window.h"
+#include "core/include/window.h"
 
 int main() {
     fcg::Window window;

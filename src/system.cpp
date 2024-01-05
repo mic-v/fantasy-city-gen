@@ -4,8 +4,8 @@
 #include <SFML/System/Vector2.hpp>
 #include <cstdlib>
 #include <ctime>
-#include "core/map.h"
-#include "core/triangle.h"
+#include "core/include/map.h"
+#include "core/include/triangle.h"
 
 fcg::System::System(fcg::Window& window) 
     : window_(window) {

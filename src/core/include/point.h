@@ -17,6 +17,9 @@ class Point {
         void set_pos(sf::Vector2f);
         sf::Vector2f get_pos() const;
 
+        float get_x() const;
+        float get_y() const;
+
         friend bool operator==(const Point&, const Point&);
         friend bool operator!=(const Point&, const Point&);
     private:

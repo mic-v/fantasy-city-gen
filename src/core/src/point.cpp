@@ -43,6 +43,14 @@ sf::Vector2f fcg::Point::get_pos() const {
     return this->pos_;
 }
 
+float fcg::Point::get_x() const {
+    return this->pos_.x;
+}
+
+float fcg::Point::get_y() const {
+    return this->pos_.y;
+}
+
 bool operator== (const fcg::Point& a, const fcg::Point& b) {
     return a.get_pos().x == b.get_pos().x && a.get_pos().y == b.get_pos().y;
 }
