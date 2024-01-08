@@ -21,6 +21,8 @@ namespace fcg {
         void clear() const;
 
         void draw(const sf::Drawable& drawable, const sf::RenderStates& states=sf::RenderStates::Default) const;
+
+        sf::Vector2u get_window_size() const;
     private:
         sf::RenderWindow* rfWindow_;
     };

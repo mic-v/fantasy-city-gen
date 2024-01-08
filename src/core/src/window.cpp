@@ -48,3 +48,7 @@ bool fcg::Window::is_open() const {
 void fcg::Window::draw(const sf::Drawable& drawable, const sf::RenderStates& states) const {
     this->rfWindow_->draw(drawable, states);
 }
+
+sf::Vector2u fcg::Window::get_window_size() const {
+    return this->rfWindow_->getSize();
+}

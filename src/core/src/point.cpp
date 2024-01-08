@@ -8,7 +8,8 @@ const int COLOUR_B_VAL = 90;
 
 fcg::Point::Point(float x, float y) : 
     pos_(sf::Vector2f(x, y)),
-    point_(sf::CircleShape(RADIUS))
+    point_(sf::CircleShape(RADIUS)),
+    x(x), y(y)
 {
     this->point_.setFillColor(sf::Color(COLOUR_R_VAL, COLOUR_G_VAL, COLOUR_B_VAL));
     this->point_.setPosition(this->pos_);
@@ -16,7 +17,9 @@ fcg::Point::Point(float x, float y) :
 
 fcg::Point::Point(sf::Vector2f vec) : 
     pos_(vec),
-    point_(sf::CircleShape(RADIUS)) 
+    point_(sf::CircleShape(RADIUS)),
+    x(vec.x), y(vec.y)
+
 {
     this->point_.setFillColor(sf::Color(COLOUR_R_VAL, COLOUR_G_VAL, COLOUR_B_VAL));
     this->point_.setPosition(this->pos_);

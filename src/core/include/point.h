@@ -8,8 +8,10 @@ class Point {
     public:
         Point(sf::Vector2f = sf::Vector2f(0.0f,0.0f));
         Point(float x, float y);
-
         ~Point();
+
+        float x;
+        float y;
 
         void set_point(sf::CircleShape);
         sf::CircleShape get_point() const;
@@ -19,6 +21,7 @@ class Point {
 
         float get_x() const;
         float get_y() const;
+
 
         friend bool operator==(const Point&, const Point&);
         friend bool operator!=(const Point&, const Point&);

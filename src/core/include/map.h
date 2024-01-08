@@ -17,7 +17,8 @@ class Map {
         std::vector<fcg::Point> get_points() const;
 
         float cross_product(fcg::Point, fcg::Point) const;      
-        bool inside_circle(fcg::Point a, fcg::Point b, fcg::Point c, fcg::Point p) const;
+        float inside_circle(fcg::Point a, fcg::Point b, fcg::Point c, fcg::Point p) const;
+        long int ccw(fcg::Point a, fcg::Point b, fcg::Point c) const;
     private:
         std::vector<fcg::Point> points_;
 };
